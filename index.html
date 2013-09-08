@@ -1,79 +1,335 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=gbk" />
+	<title>some title for the page</title>
+	<style type="text/css">
+		<!--
+		body,td,th {font-size: 12px;}
+		a {color:#006699; text-decoration:none;}
+		a:hover {color:#f60;text-decoration:underline;}
+		dd,dl,ul,li,p,form{ margin:0; padding:0;list-style-type:none;}
+		h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
+		.but{color:#FF8320; border:1px solid #ccc; background:#fff;cursor:pointer;height:25px; line-height:25px;width:80px;}
+		/*progress*/
+		.checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; padding:15px; width:600px;}
+		.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:598px;margin:0 auto;padding:10px 0 10px 0;}
+		.evaluation div{float:left;}
+		.progress i{color:#F60;font-weight:700; font-style:normal;}
+		.progress p{height:26px;width:100%;}
+		.progress .picbg{background:#fff;height:15px;width:590px; border:1px solid red;}
+		.progress .picbg span{background:#FF8320;display:block;float:left;height:15px; }
+		/*content*/
+		.Test ul{ margin:0; padding:0;}
+		.Test li{ border:1px solid #FFFBF4; margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
+		.Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
+		#Problem1,#Problem2,#Problem3{}
+		.hidden{ display:none;}
+		#Result p{ margin:8px; padding:8px; line-height:25px;background:#FFF; width:560px; border:1px dotted #FF8E20;}
+		-->
+	</style>
+	<!-- Change jquery to correct link-->
+	<script type="text/javascript" src="/javascript/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript">
+	  var result={
+			 "m1":"经测试，你家的小阿哥还算不上小熊孩儿哦~你为他描述的一切他都感兴趣极啦，一台内容丰富，可以无限重复的故事机就可以拯救你啦！有了文曲星故事机，故事听再多遍也不怕啦！（小熊销售链接：）",
+			 "m2":"经测试此你的小淘气为萌芽熊孩子，一点战斗力都没有，他对新鲜感的追求是他上进心的反光！ 层出不穷的故事、成语、神话… 文曲星故事机里都有！（小熊销售链接 ）",
+			 "m3":"经测试，您的大宝贝已经正式进入了熊孩子初级阶段，他的好奇心是将来一切数码产品悲剧的源泉… 文曲星故事机里有无穷无尽的天文地理，每个月都有更新，让他琢磨去吧！（小熊销售链接：）",
+			 "m4":"经测试，你的小阿哥已经算是进阶熊宝宝了！作为一个小男子汉，从小就要培养深（jie）沉（jian）的气质，要挖掘玩具的内涵才行。文曲星故事机有专家安排的推送功能，常听常新，最适（sheng）合（qian）了！（小熊销售链接：）",
+		     "m5":"这位小王子已经是名符其实的“熊孩子”啦！和他们没有道理可讲！不管你多疲惫多辛苦他都有不停歇的缠着你！赶紧请文曲星故事机陪他一会儿，吸引他的注意力，也能让自己能喘口气，现在就解脱自己吧！ （小熊销售链接）",
+		     "f1":"经测试，你的小公主还算不上小熊孩儿哦~她喜欢听你为她描述这个世界奇妙美好的一切，故事机可以耐心讲上三百零一遍！有了文曲星故事机，故事听再多遍也不怕啦！（小兔销售链接：)",
+		     "f2":"经测试此你家的小顽皮为萌芽熊孩子，熊孩儿指数只在萌芽阶段！ 现在就如此追求新鲜感，未来的她一定走在时尚最前线！文曲星故事机，故事总能花样再翻新：）（小兔销售链接：）",
+			 "f3":"经测试，您的小宝贝已经进入了熊孩子初级阶段，她的求知欲已经蔓延到了整个宇宙！ 将来不会有男孩子能瞒过她的眼睛！ 文曲星故事机里有幼教专家不断更新专业知识，保证修炼火眼金睛！（小兔销售链接：）",
+			 "f4":"经测试，小公主已经进入了进阶熊孩子阶段，题主已经看到她将来的男友表情了！不过现在嘛，先给她一个故事机听故事吧，告诉她故事机是会换灵魂的哟！每个月的灵魂讲的故事不一样哟！（兔子销售链接：）",
+			 "f5":"这位小公主已经是名符其实的“熊孩子”啦！明明大人辛辛苦苦为她赚钱跑了一天，跑来缠着大人不放！可是这样的熊孩子最可爱啦！不过，不妨请文曲星故事机陪她一会儿，给自己放个假吧！ （小兔销售链接）"
+			};
+	  $(function(){
+			var oP1=$("#Problem1"),
+			    oP2=$("#Problem2"),
+			    oP3=$("#Problem3"),
+			    oP4=$("#Problem4"),
+			    oP5=$("#Problem5"),
+			    oP6=$("#Problem6"),
+			    oP7=$("#Problem7"),
+			    oR=$("#Result"),
+			    p=oR.find("p"),
+			    oPro=$(".picbg").find("span"),	
+			    oBtn1=oP1.find(".but"),
+			    oBtn2=oP2.find(".but"),
+			    oBtn3=oP3.find(".but"),
+			    oBtn4=oP4.find(".but"),
+			    oBtn5=oP5.find(".but"),
+			    oBtn6=oP6.find(".but"),
+			    oBtn7=oP7.find(".but"),
+			    oBtn9=oR.find(".but"),
+			    data=[];
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Crazykid : " />
+			oP1.find("input[type='radio']").change(function(){
+			  var choose1=oP1.find("input[type='radio']:checked").length;
+				if(choose1){
+					oPro.animate({"width":"50%"},400);
+				}
+				data.push($(this).val());
+				return data;
+			});
+			oBtn1.click(function(){
+				var choose1=oP1.find("input[type='radio']:checked").length;
+			  if(choose1){
+					oP2.fadeIn();
+					oP1.hide();
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+			oP2.find("input[type='radio']").change(function(){
+			  var choose2=oP2.find("input[type='radio']:checked").length;
+				if(choose2){
+					oPro.animate({"width":"50%"},400);
+				}
+				data.push($(this).val());
+				return data;
+			});
+			oBtn2.click(function(){
+				var choose2=oP2.find("input[type='radio']:checked").length;
+			  if(choose2){
+					oP3.fadeIn();
+					oP2.hide();
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
 
-    <title>Crazykid</title>
-  </head>
+			oP3.find("input[type='radio']").change(function(){
+			  var choose3=oP3.find("input[type='radio']:checked").length;
+				if(choose3){
+					oPro.animate({"width":"50%"},400);
+				}
+				data.push($(this).val());
+				return data;
+			});
+			oBtn3.click(function(){
+				var choose3=oP3.find("input[type='radio']:checked").length;
+			  if(choose3){
+					oP4.fadeIn();
+					oP3.hide();
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
 
-  <body>
+			oP4.find("input[type='radio']").change(function(){
+			  var choose4=oP4.find("input[type='radio']:checked").length;
+				if(choose4){
+					oPro.animate({"width":"50%"},400);
+				}
+				data.push($(this).val());
+				return data;
+			});
+			oBtn4.click(function(){
+				var choose4=oP4.find("input[type='radio']:checked").length;
+			  if(choose4){
+					oP5.fadeIn();
+					oP4.hide();
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
+			oP5.find("input[type='radio']").change(function(){
+			  var choose5=oP5.find("input[type='radio']:checked").length;
+				if(choose5){
+					oPro.animate({"width":"50%"},400);
+				}
+				data.push($(this).val());
+				return data;
+			});
+			oBtn5.click(function(){
+				var choose5=oP5.find("input[type='radio']:checked").length;
+			  if(choose5){
+					oP6.fadeIn();
+					oP5.hide();
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
+			oP6.find("input[type='radio']").change(function(){
+			  var choose6=oP6.find("input[type='radio']:checked").length;
+				if(choose6){
+					oPro.animate({"width":"50%"},400);
+				}
+				data.push($(this).val());
+				return data;
+			});
+			oBtn6.click(function(){
+				var choose6=oP6.find("input[type='radio']:checked").length;
+			  if(choose6){
+					oP7.fadeIn();
+					oP6.hide();
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
+			oP7.find("input[type='radio']").change(function(){
+			  var choose7=oP7.find("input[type='radio']:checked").length;
+				if(choose7){
+					oPro.animate({"width":"100%"},400);
+				}				
+				data.push($(this).val());
+				return data;	
+			});
+			oBtn7.click(function(){
+				var choose7=oP7.find("input[type='radio']:checked").length;
+				if(choose7){
+					oP7.hide();
+					oR.fadeIn();
+					var index=data[0]+data[3];
+					p.html(result[index]);
+				}else{
+					alert("fill some answer");
+					return false;
+				}
+			});
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/yubozhaoTest/crazykid">View on GitHub</a>
 
-          <h1 id="project_title">Crazykid</h1>
-          <h2 id="project_tagline"></h2>
+	//result:
+			oBtn9.click(function(){
+			  data=[];
+				oP1.show();
+				oP2.hide();
+				oP3.hide();
+				oP4.hide();
+				oP5.hide();
+				oP6.hide();
+				oP7.hide();
+				oR.hide();
+				oPro.animate({"width":"0%"},400);
+				$("input[type='radio']").attr("checked","");	
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="checkbox">
+		<div class="progress">
+			<p>你有小熊孩儿吗？你遭遇过熊孩子吗？不管你的小熊孩儿多大年纪，不管你遭遇 的熊孩子多么难搞定，我这里统统有对策！</p>
+			<p class="picbg"><span style="width:0%;"></span></p>
+		</div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/yubozhaoTest/crazykid/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/yubozhaoTest/crazykid/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+		<div class="Test">
+		    <div id="Problem1" >
+		        <h3>1.	性别</h3>
+			  <form action="" method="get">
+				  <ul>
+			       <li onmouseout="this.className='';"
+			       onmouseover="this.className='myBox';"><input name="select" type="radio"
+			       value="m"/>男  小熊</li>
+			       <li onmouseout="this.className='';"
+			       onmouseover="this.className='myBox';"><input name="select" type="radio"
+			       value="f"/>女  小兔子</li>
+				  </ul>
+			      <input type="button"  class="but"  value="next" />
+				</form>
+		    </div>
+		    <div id="Problem2" class="hidden" >
+		        <h3>2. 星座</h3>
+				<form action="" method="get">
+			   <ul>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>白羊</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>金牛</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>双子</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>巨蟹</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>狮子</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>处女</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>天平</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>天蝎</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>射手</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>摩羯</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>水瓶</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>双鱼</li>
+				</ul>
+		        <input type="button" class="but"  value="next" />
+				</form>
+			</div>
+			<div id="Problem3" class="hidden" >
+		        <h3>3. 性格类型</h3>
+				<form action="" method="get">
+			   <ul>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>活泼开朗托马斯</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>自信独立小哪吒</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>含羞内向小kitty</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="d"/>温和友善维尼熊</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="e"/>B求知欲强小柯南</li>
+				</ul>
+		        <input type="button" class="but"  value="next" />
+				</form>
+			</div>
+			<div id="Problem4" class="hidden" >
+		        <h3>4. 贪玩指数</h3>
+				<form action="" method="get">
+			   <ul>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="1"/> 一个故事要听三百遍</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="2"/>不玩够三个小时不睡觉</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="3"/>三分钟热度玩过一次就烦</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="4"/>见到什么都要追问为什么</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="5"/>下班疲累依然要陪玩一整晚</li>
+				</ul>
+		        <input type="button" class="but"  value="next" />
+				</form>
+			</div>
+			<div id="Problem5" class="hidden" >
+		        <h3>5. 破坏类型</h3>
+				<form action="" method="get">
+			   <ul>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="1"/>和风细雨，人畜无害</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="2"/>风雨交加，满地凋零
+/li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="3"/>一夫当关，万夫莫开
+</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="4"/>天生神力，风卷残云</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="5"/>叱咤风云，片甲不留</li>
+				</ul>
+		        <input type="button" class="but"  value="next" />
+				</form>
+			</div>
+			<div id="Problem6" class="hidden" >
+		        <h3>6. 喜欢的游戏类型</h3>
+				<form action="" method="get">
+			   <ul>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>听故事</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>自己画画</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>玩电子游戏</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>和小伙伴玩过家家</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>户外游戏</li>
+				</ul>
+		        <input type="button" class="but"  value="next" />
+				</form>
+			</div>
+			<div id="Problem7" class="hidden" >
+		        <h3>7、喜欢的故事类型</h3>
+				<form action="" method="get">
+			   <ul>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>冒险故事：小红帽</li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>古典故事：田螺姑娘</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>漫画类： 小熊维尼</li>
+			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>科普类： 十万个为什么</li>
+				</ul>
+		        <input type="button" class="but"  value="display Result" />
+				</form>
+			</div>
+		    <div id="Result" class="hidden" >
+		       <h3>final answer</h3>
+			   <p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Crazykid maintained by <a href="https://github.com/yubozhaoTest">yubozhaoTest</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+			   </p>
+			   <input type="button"  class="but"  value="retake" onclick=""/>
+		    </div>
+		</div>
+	</div>
+</body>
 </html>
