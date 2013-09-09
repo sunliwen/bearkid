@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<title>some title for the page</title>
+	<title>熊孩子指数大测试</title>
 	<style type="text/css">
 		<!--
 		body,td,th {font-size: 12px;}
@@ -23,12 +23,11 @@
 		.Test ul{ margin:0; padding:0;}
 		.Test li{ border:1px solid #FFFBF4; margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
 		.Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
-		#Problem1,#Problem2,#Problem3{}
 		.hidden{ display:none;}
 		#Result p{ margin:8px; padding:8px; line-height:25px;background:#FFF; width:560px; border:1px dotted #FF8E20;}
 		-->
 	</style>
-	<!-- Change jquery to correct link-->
+
 	<script type="text/javascript" src="/crazykid/javascripts/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript">
 	  var result={
@@ -61,7 +60,7 @@
 			    oBtn5=oP5.find(".but"),
 			    oBtn6=oP6.find(".but"),
 			    oBtn7=oP7.find(".but"),
-			    oBtn9=oR.find(".but"),
+			    oBtn9=oR.find("#retake"),
 			    oBtnShare=oR.find(".share"),
 			    index,
 			    answer,
@@ -78,8 +77,8 @@
 			oBtn1.click(function(){
 				var choose1=oP1.find("input[type='radio']:checked").length;
 			  if(choose1){
-					oP2.fadeIn();
-					oP1.hide();
+					oP1.hide("slow");
+					oP2.fadeIn("slow");
 				}else{
 					alert("fill some answer");
 					return false;
@@ -97,8 +96,8 @@
 			oBtn2.click(function(){
 				var choose2=oP2.find("input[type='radio']:checked").length;
 			  if(choose2){
-					oP3.fadeIn();
-					oP2.hide();
+					oP2.hide("slow");
+					oP3.fadeIn("slow");
 				}else{
 					alert("fill some answer");
 					return false;
@@ -116,8 +115,8 @@
 			oBtn3.click(function(){
 				var choose3=oP3.find("input[type='radio']:checked").length;
 			  if(choose3){
-					oP4.fadeIn();
-					oP3.hide();
+					oP3.hide("slow");
+					oP4.fadeIn("slow");
 				}else{
 					alert("fill some answer");
 					return false;
@@ -135,8 +134,8 @@
 			oBtn4.click(function(){
 				var choose4=oP4.find("input[type='radio']:checked").length;
 			  if(choose4){
-					oP5.fadeIn();
-					oP4.hide();
+					oP4.hide("slow");
+					oP5.fadeIn("slow");
 				}else{
 					alert("fill some answer");
 					return false;
@@ -153,8 +152,8 @@
 			oBtn5.click(function(){
 				var choose5=oP5.find("input[type='radio']:checked").length;
 			  if(choose5){
-					oP6.fadeIn();
-					oP5.hide();
+					oP5.hide("slow");
+					oP6.fadeIn("slow");
 				}else{
 					alert("fill some answer");
 					return false;
@@ -171,8 +170,8 @@
 			oBtn6.click(function(){
 				var choose6=oP6.find("input[type='radio']:checked").length;
 			  if(choose6){
-					oP7.fadeIn();
-					oP6.hide();
+					oP6.hide("slow");
+					oP7.fadeIn("slow");
 				}else{
 					alert("fill some answer");
 					return false;
@@ -189,8 +188,8 @@
 			oBtn7.click(function(){
 				var choose7=oP7.find("input[type='radio']:checked").length;
 				if(choose7){
-					oP7.hide();
-					oR.fadeIn();
+					oP7.hide("slow");
+					oR.fadeIn("slow");
 					index=data[0]+data[3];
 					answer = result[index];
 					p.html(result[index]);
@@ -204,14 +203,14 @@
 	//result:
 			oBtn9.click(function(){
 			  data=[];
-				oP1.show();
+				oR.hide("slow");
+				oP1.show("slow");
 				oP2.hide();
 				oP3.hide();
 				oP4.hide();
 				oP5.hide();
 				oP6.hide();
 				oP7.hide();
-				oR.hide();
 				oPro.animate({"width":"0%"},400);
 				$("input[type='radio']").attr("checked","");	
 			});
@@ -225,6 +224,7 @@
 <body>
 	<div class="checkbox">
 		<div class="progress">
+			<p><strong>熊孩子指数大测试</strong></p>
 			<p>你有小熊孩儿吗？你遭遇过熊孩子吗？不管你的小熊孩儿多大年纪，不管你遭遇 的熊孩子多么难搞定，我这里统统有对策！</p>
 			<br>
 			<p class="picbg"><span style="width:0%;"></span></p>
@@ -242,7 +242,7 @@
 			       onmouseover="this.className='myBox';"><input name="select" type="radio"
 			       value="f"/>女  小兔子</li>
 				  </ul>
-			      <input type="button"  class="but"  value="next" />
+			      <input type="button"  class="but"  value="下一题" />
 				</form>
 		    </div>
 		    <div id="Problem2" class="hidden" >
@@ -262,20 +262,20 @@
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>水瓶</li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>双鱼</li>
 				</ul>
-		        <input type="button" class="but"  value="next" />
+		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
 			<div id="Problem3" class="hidden" >
 		        <h3>3. 性格类型</h3>
 				<form action="" method="get">
 			   <ul>
-		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>活泼开朗托马斯</li>
-		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>自信独立小哪吒</li>
+		     <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>活泼开朗托马斯</li>
+		     <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>自信独立小哪吒</li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>含羞内向小kitty</li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="d"/>温和友善维尼熊</li>
-		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="e"/>B求知欲强小柯南</li>
+		     <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="e"/>求知欲强小柯南</li>
 				</ul>
-		        <input type="button" class="but"  value="next" />
+		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
 			<div id="Problem4" class="hidden" >
@@ -288,7 +288,7 @@
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="4"/>见到什么都要追问为什么</li>
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="5"/>下班疲累依然要陪玩一整晚</li>
 				</ul>
-		        <input type="button" class="but"  value="next" />
+		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
 			<div id="Problem5" class="hidden" >
@@ -297,12 +297,13 @@
 			   <ul>
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="1"/>和风细雨，人畜无害</li>
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="2"/>风雨交加，满地凋零</li>
-			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="3"/>一夫当关，万夫莫开
-</li>
+			   <li onmouseout="this.className='';"
+         onmouseover="this.className='myBox';"><input name="select" type="radio"
+         value="3"/>一夫当关，万夫莫开</li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="4"/>天生神力，风卷残云</li>
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="5"/>叱咤风云，片甲不留</li>
 				</ul>
-		        <input type="button" class="but"  value="next" />
+		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
 			<div id="Problem6" class="hidden" >
@@ -315,7 +316,7 @@
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>和小伙伴玩过家家</li>
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="b"/>户外游戏</li>
 				</ul>
-		        <input type="button" class="but"  value="next" />
+		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
 			<div id="Problem7" class="hidden" >
@@ -327,16 +328,16 @@
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="c"/>漫画类： 小熊维尼</li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="a"/>科普类： 十万个为什么</li>
 				</ul>
-		        <input type="button" class="but"  value="display Result" />
+		        <input type="button" class="but"  value="显示结果" />
 				</form>
 			</div>
 		    <div id="Result" class="hidden" >
-		       <h3>final answer</h3>
+		       <h3>测试结果：</h3>
 			   <p>
 
 			   </p>
-			   <input type="button"  class="but"  value="retake" onclick=""/>
-			   <input type="button"  class="share"  value="share to weibo" onclick=""/>
+			   <input type="button"  id="retake"class="but"  value="从新开始" onclick=""/>
+			   <input type="button"  class="but share"  value="分享到微博" onclick=""/>
 		    </div>
 		</div>
 	</div>
