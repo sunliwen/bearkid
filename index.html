@@ -63,6 +63,7 @@
 			    oBtn7=oP7.find(".but"),
 			    oBtn9=oR.find(".but"),
 			    oBtnShare=oR.find(".share"),
+			    index,
 			    data=[];
 
 			oP1.find("input[type='radio']").change(function(){
@@ -189,7 +190,7 @@
 				if(choose7){
 					oP7.hide();
 					oR.fadeIn();
-					var index=data[0]+data[3];
+					index=data[0]+data[3];
 					p.html(result[index]);
 				}else{
 					alert("fill some answer");
