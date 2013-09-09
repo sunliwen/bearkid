@@ -62,6 +62,7 @@
 			    oBtn6=oP6.find(".but"),
 			    oBtn7=oP7.find(".but"),
 			    oBtn9=oR.find(".but"),
+			    oBtnShare=oR.find(".share"),
 			    data=[];
 
 			oP1.find("input[type='radio']").change(function(){
@@ -211,6 +212,10 @@
 				oPro.animate({"width":"0%"},400);
 				$("input[type='radio']").attr("checked","");	
 			});
+
+			oBtnShare.click(function () {
+				window.open('http://v.t.sina.com.cn/share/share.php?title=' + result[index]);
+			})
 		});
 	</script>
 </head>
@@ -288,8 +293,7 @@
 				<form action="" method="get">
 			   <ul>
 		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="1"/>和风细雨，人畜无害</li>
-		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="2"/>风雨交加，满地凋零
-/li>
+		       <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="2"/>风雨交加，满地凋零</li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="3"/>一夫当关，万夫莫开
 </li>
 			   <li onmouseout="this.className='';" onmouseover="this.className='myBox';"><input name="select" type="radio" value="4"/>天生神力，风卷残云</li>
@@ -329,6 +333,7 @@
 
 			   </p>
 			   <input type="button"  class="but"  value="retake" onclick=""/>
+			   <input type="button"  class="share"  value="share to weibo" onclick=""/>
 		    </div>
 		</div>
 	</div>
