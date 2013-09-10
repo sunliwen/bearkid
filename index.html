@@ -102,8 +102,10 @@
 			oBtn2.click(function(){
 				var choose2=oP2.find("input[type='radio']:checked").length;
 			  if(choose2){
-					oP2.hide("slow");
-					oP3.fadeIn("slow");
+					oP2.animo({animation: 'bounceOutLeft'}, function () {
+			  			oP2.hide();
+			  			oP3.animo({animation: 'bounchInRight'});
+			  		});
 				}else{
 					alert("请选择一个答案");
 					return false;
@@ -121,9 +123,10 @@
 			oBtn3.click(function(){
 				var choose3=oP3.find("input[type='radio']:checked").length;
 			  if(choose3){
-					oP3.hide("slow");
-					oP4.fadeIn("slow");
-				}else{
+					oP3.animo({animation: 'bounceOutLeft'}, function () {
+			  			oP3.hide();
+			  			oP4.animo({animation: 'bounchInRight'});
+			  		});				}else{
 					alert("请选择一个答案");
 					return false;
 				}
@@ -140,8 +143,10 @@
 			oBtn4.click(function(){
 				var choose4=oP4.find("input[type='radio']:checked").length;
 			  if(choose4){
-					oP4.hide("slow");
-					oP5.fadeIn("slow");
+					oP4.animo({animation: 'bounceOutLeft'}, function () {
+			  			oP4.hide();
+			  			oP5.animo({animation: 'bounchInRight'});
+			  		});
 				}else{
 					alert("请选择一个答案");
 					return false;
@@ -158,8 +163,10 @@
 			oBtn5.click(function(){
 				var choose5=oP5.find("input[type='radio']:checked").length;
 			  if(choose5){
-					oP5.hide("slow");
-					oP6.fadeIn("slow");
+					oP5.animo({animation: 'bounceOutLeft'}, function () {
+			  			oP5.hide();
+			  			oP6.animo({animation: 'bounchInRight'});
+			  		});
 				}else{
 					alert("请选择一个答案");
 					return false;
@@ -176,8 +183,10 @@
 			oBtn6.click(function(){
 				var choose6=oP6.find("input[type='radio']:checked").length;
 			  if(choose6){
-					oP6.hide("slow");
-					oP7.fadeIn("slow");
+					oP6.animo({animation: 'bounceOutLeft'}, function () {
+			  			oP6.hide();
+			  			oP7.animo({animation: 'bounchInRight'});
+			  		});
 				}else{
 					alert("请选择一个答案");
 					return false;
@@ -194,8 +203,10 @@
 			oBtn7.click(function(){
 				var choose7=oP7.find("input[type='radio']:checked").length;
 				if(choose7){
-					oP7.hide("slow");
-					oR.fadeIn("slow");
+					oP7.animo({animation: 'bounceOutLeft'}, function () {
+			  			oP7.hide();
+			  			oR.animo({animation: 'bounchInRight'});
+			  		});
 					index=data[0]+data[3];
 					answer = result[index];
 					p.html(result[index]);
@@ -209,14 +220,17 @@
 	//result:
 			oBtn9.click(function(){
 			  data=[];
-				oR.hide("slow");
-				oP1.show("slow");
-				oP2.hide();
-				oP3.hide();
-				oP4.hide();
-				oP5.hide();
-				oP6.hide();
-				oP7.hide();
+			  	oR.animo({animation: 'bounceOutLeft'}, function () {
+			  			oR.hide();
+			  			oP5.animo({animation: 'bounchInRight'});
+			  			oP2.hide();
+						oP3.hide();
+						oP4.hide();
+						oP5.hide();
+						oP6.hide();
+						oP7.hide();
+
+			  		});
 				oPro.animate({"width":"0%"},400);
 				$("input[type='radio']").attr("checked","");	
 			});
