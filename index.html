@@ -221,6 +221,9 @@
 			  		});
 					index=data[0]+data[3];
 					answer = result[index];
+					if (data[0] === 'f') {
+						oR.img.attr("src", "/crazykid/images/tuz.png");
+					}
 					p.html(result[index]);
 				}else{
 					alert("请选择一个答案");
