@@ -29,6 +29,7 @@
 	</style>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js" type="text/javascript"></script>
   <script src="/crazykid/javascripts/animo.js" type="text/javascript"></script>
+  <script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
   <link href="/crazykid/stylesheets/animate+animo.css" rel="stylesheet" type="text/css">
 
 	<!--script type="text/javascript"
@@ -262,14 +263,17 @@
 		    <div id="Problem1" >
 		        <h3>1.	性别</h3>
 			  <form action="" method="get">
-				  <ul>
-			       <li onmouseout="this.className='';"
-			       onmouseover="this.className='myBox';"><input name="select" type="radio"
-			       value="m"/>男  小熊</li>
-			       <li onmouseout="this.className='';"
-			       onmouseover="this.className='myBox';"><input name="select" type="radio"
-			       value="f"/>女  小兔子</li>
-				  </ul>
+			  	<table>
+			  		<tbody>
+			  			<tr>
+				  			<td>
+								<li><input name="select" type="radio" value="m"/>男  小熊</li>
+				  			</td>
+				  			<td>
+								<li><input name="select" type="radio" value="f"/>女  小兔子</li>
+				  			</td>
+			  			</tr>
+			  		</tbody>
 			      <input type="button"  class="but"  value="下一题" />
 				</form>
 		    </div>
