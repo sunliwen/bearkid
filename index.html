@@ -12,7 +12,7 @@
 		.but{color:#FF8320; border:1px solid #ccc; background:#fff;cursor:pointer;height:25px; line-height:25px;width:80px;}
 		/*progress*/
 		.progress{background-image: url(../crazykid/images/top.png);background-size: auto;}
-		body {background-image: url(../crazykid/images/bg1.jpg);}
+		.checkbox {background-image: url(../crazykid/images/bg1.jpg);}
 		.checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; padding:15px; width:600px;}
 		.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:598px;margin:0 auto;padding:10px 0 10px 0;}
 		.evaluation div{float:left;}
@@ -28,13 +28,13 @@
 		.Test li{ border:1px solid #FFFBF4; margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
 		.Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
 		.hidden{ display:none;}
-		#coolDisplay {float: left;}
-		.result{ margin-left:280px; padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
+		.container {float: left;}
+		.result{padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
 	</style>
-  <script src="/crazykid/javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
-  <script src="/crazykid/javascripts/animo.js" type="text/javascript"></script>
+  <script src="../crazykid/javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
+  <script src="../crazykid/javascripts/animo.js" type="text/javascript"></script>
   <script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
-  <link href="/crazykid/stylesheets/animate+animo.css" rel="stylesheet" type="text/css">
+  <link href="../crazykid/stylesheets/animate+animo.css" rel="stylesheet" type="text/css">
 
 	<script type="text/javascript">
 	  var result={
@@ -59,7 +59,7 @@
 			    oP6=$("#Problem6"),
 			    oP7=$("#Problem7"),
 			    oR=$("#Result"),
-			    p=oR.find("#resultText"),
+			    p=oR.find(".result"),
 			    oPro=$(".picbg").find("span"),	
 			    oBtn1=oP1.find(".but"),
 			    oBtn2=oP2.find(".but"),
@@ -101,7 +101,6 @@
 				if(choose2){
 					oPro.animate({"width":"30%"},400);
 				}
-				data.push($(this).val());
 				return data;
 			});
 			oBtn2.click(function(){
@@ -123,7 +122,6 @@
 				if(choose3){
 					oPro.animate({"width":"45%"},400);
 				}
-				data.push($(this).val());
 				return data;
 			});
 			oBtn3.click(function(){
@@ -165,7 +163,6 @@
 				if(choose5){
 					oPro.animate({"width":"70%"},400);
 				}
-				data.push($(this).val());
 				return data;
 			});
 			oBtn5.click(function(){
@@ -186,7 +183,6 @@
 				if(choose6){
 					oPro.animate({"width":"85%"},400);
 				}
-				data.push($(this).val());
 				return data;
 			});
 			oBtn6.click(function(){
@@ -207,7 +203,6 @@
 				if(choose7){
 					oPro.animate({"width":"100%"},400);
 				}				
-				data.push($(this).val());
 				return data;	
 			});
 			oBtn7.click(function(){
@@ -218,10 +213,13 @@
 			  			oR.show();
 			  			oR.animo({animation: 'bounchInUp'});
 			  		});
-					index=data[0]+data[3];
+			  		if (!data[1]) {
+			  			data[1] = 3;
+			  		}
+					index=data[0]+data[1];
 					answer = result[index];
 					if (data[0] === 'f') {
-						oR.find["#award"].attr("src", "/crazykid/images/tuz.png");
+						$('#Result').find('#award').attr("src", '../crazykid/images/tuz.png');
 					}
 					p.html(result[index]);
 				}else{
@@ -244,11 +242,12 @@
 				oP7.hide();
 			  });
 			  oPro.animate({"width":"0%"},400);
-			  $("input[type='radio']").attr("checked","");	
 			});
 
 			oBtnShare.click(function () {
-				window.open('http://v.t.sina.com.cn/share/share.php?appkey=1480881490ktitle=', answer);
+				answer = encodeURIComponent(answer);
+				var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer; 
+				window.open(url);
 			});
 		});
 	</script>
@@ -269,11 +268,11 @@
 			  		<tbody>
 			  			<tr>
 				  			<td>
-				  				<img src="/crazykid/images/boy.png"/>
+				  				<img src="../crazykid/images/boy.png"/>
 				  			</td>
 				  			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  			<td>
-				  				<img src="/crazykid/images/girl.png"/>
+				  				<img src="../crazykid/images/girl.png"/>
 				  			</td>
 			  			</tr>
 			  			<tr>
@@ -420,8 +419,9 @@
 			</div>
 		    <div id="Result" class="hidden" >
 		       <h3 class="question">测试结果：</h3>
-			   <div class="coolDisplay">
-				<img id="award" src="/crazykid/images/xx.png"/><div class="result"><p id="resultText"></p></div>
+			   <div class="container">
+				<img id="award" src="../crazykid/images/xx.png"/>
+				<div class="result"></div>
 			   </div>
 			   <input type="button"  id="retake"class="but"  value="从新开始" onclick=""/>
 			   <input type="button"  class="but share"  value="分享到微博" onclick=""/>
