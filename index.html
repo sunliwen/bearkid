@@ -60,7 +60,7 @@
 			    oP6=$("#Problem6"),
 			    oP7=$("#Problem7"),
 			    oR=$("#Result"),
-			    p=oR.find("p"),
+			    p=oR.find("#result"),
 			    oPro=$(".picbg").find("span"),	
 			    oBtn1=oP1.find(".but"),
 			    oBtn2=oP2.find(".but"),
@@ -421,9 +421,8 @@
 			</div>
 		    <div id="Result" class="hidden" >
 		       <h3 class="question">测试结果：</h3>
-		       <img id="award" src="/crazykid/images/xx.png"/>
 			   <p>
-
+				<img id="award" src="/crazykid/images/xx.png"/><span class="result"></span>
 			   </p>
 			   <input type="button"  id="retake"class="but"  value="从新开始" onclick=""/>
 			   <input type="button"  class="but share"  value="分享到微博" onclick=""/>
