@@ -2,17 +2,18 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	<title>熊孩子指数大测试</title>
+	<title><h2>熊孩子指数大测试</h2></title>
 	<style type="text/css">
 		<!--
-		body,td,th {font-size: 12px;}
+		body,td,th {font-size: 12px; font-family: "arial, sans-serif"; }
 		a {color:#006699; text-decoration:none;}
 		a:hover {color:#f60;text-decoration:underline;}
 		dd,dl,ul,li,p,form{ margin:0; padding:0;list-style-type:none;}
 		h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
 		.but{color:#FF8320; border:1px solid #ccc; background:#fff;cursor:pointer;height:25px; line-height:25px;width:80px;}
 		/*progress*/
-		.progress{background-image: url(../crazy/images/top.png);}
+		.progress{background-image: url(../crazykid/images/top.png);}
+		body {background-image: url(../crazykid/images/bg1.png);}
 		.checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; padding:15px; width:600px;}
 		.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:598px;margin:0 auto;padding:10px 0 10px 0;}
 		.evaluation div{float:left;}
@@ -21,6 +22,7 @@
 		.progress .picbg{background:#fff;height:15px;width:590px; border:1px solid red;}
 		.progress .picbg span{background:#FF8320;display:block;float:left;height:15px; }
 		/*content*/
+		.question {margin-left:auto; margin-right:auto; color: 'blue';}
 		.Test ul{ margin:0; padding:0;}
 		.Test li{ border:1px solid #FFFBF4; margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
 		.Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
@@ -247,7 +249,7 @@
 		});
 	</script>
 </head>
-<body  background="/crazykid/images/bg1.jpg">
+<body>
 	<div class="checkbox">
 		<div class="progress">
 			<p><strong>熊孩子指数大测试</strong></p>
@@ -258,19 +260,25 @@
 
 		<div class="Test">
 		    <div id="Problem1" >
-		        <h3>1.	性别</h3>
+		        <h3 class="question">1.	性别</h3>
 			  <form action="" method="get">
 			  	<table>
 			  		<tbody>
 			  			<tr>
 				  			<td>
 				  				<img src="/crazykid/images/boy.png"/>
-								<label><input name="select" type="radio" value="m"/>男  小熊</label>
 				  			</td>
 				  			<td>
 				  				<img src="/crazykid/images/girl.png"/>
-								<label><input name="select" type="radio" value="f"/>女  小兔子</label>
 				  			</td>
+			  			</tr>
+			  			<tr>
+			  			<td>
+			  				<label><input name="select" type="radio" value="m"/>男  小熊</label>
+			  			</td>
+			  			<td>
+			  				<label><input name="select" type="radio" value="f"/>女  小兔子</label>
+			  			</td>
 			  			</tr>
 			  		</tbody>
 			      </table>
@@ -278,7 +286,7 @@
 				<input type="button"  class="but"  value="下一题" />
 		    </div>
 		    <div id="Problem2" class="hidden" >
-		        <h3>2. 星座</h3>
+		        <h3 class="question">2. 星座</h3>
 				<form action="" method="get">
 			   <table>
 				   <tbody>
@@ -286,6 +294,7 @@
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="a"/>白羊</label>
 					   	   	</td>
+					   	   	<td></td>
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="b"/>金牛</label>
 					   	   	</td>
@@ -294,6 +303,7 @@
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="c"/>双子</label>
 					   	   	</td>
+					   	   	<td></td>
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="a"/>巨蟹</label>
 					   	   	</td>
@@ -302,6 +312,7 @@
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="b"/>狮子</label>
 					   	   	</td>
+					   	   	<td></td>
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="c"/>处女</label>
 					   	   	</td>
@@ -310,6 +321,7 @@
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="a"/>天平</label>
 					   	   	</td>
+					   	   	<td></td>
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="b"/>天蝎</label>
 					   	   	</td>
@@ -318,6 +330,7 @@
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="c"/>射手</label>
 					   	   	</td>
+					   	   	<td></td>
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="a"/>摩羯</label>
 					   	   	</td>
@@ -326,6 +339,7 @@
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="b"/>水瓶</label>
 					   	   	</td>
+					   	   	<td></td>
 					   	   	<td>
 					   	   		<label><input name="select" type="radio" value="c"/>双鱼</label>
 					   	   	</td>
@@ -336,7 +350,7 @@
 				<input type="button" class="but"  value="下一题" />
 			</div>
 			<div id="Problem3" class="hidden" >
-		        <h3>3. 性格类型</h3>
+		        <h3 class="question">3. 性格类型</h3>
 				<form action="" method="get">
 			   <ul>
 			   <li><label><input name="select" type="radio" value="a"/>活泼开朗托马斯</label></li>
@@ -349,7 +363,7 @@
 				</form>
 			</div>
 			<div id="Problem4" class="hidden" >
-		        <h3>4. 贪玩指数</h3>
+		        <h3 class="question">4. 贪玩指数</h3>
 				<form action="" method="get">
 			   <ul>
 		       <li><label><input name="select" type="radio" value="1"/> 一个故事要听三百遍</label></li>
@@ -362,7 +376,7 @@
 				</form>
 			</div>
 			<div id="Problem5" class="hidden" >
-		        <h3>5. 破坏类型</h3>
+		        <h3 class="question">5. 破坏类型</h3>
 				<form action="" method="get">
 			   <ul>
 		       <li><label><input name="select" type="radio" value="1"/>和风细雨，人畜无害</label></li>
@@ -375,7 +389,7 @@
 				</form>
 			</div>
 			<div id="Problem6" class="hidden" >
-		        <h3>6. 喜欢的游戏类型</h3>
+		        <h3 class="question">6. 喜欢的游戏类型</h3>
 				<form action="" method="get">
 			   <ul>
 		       <li><label><input name="select" type="radio" value="a"/>听故事</label></li>
@@ -388,7 +402,7 @@
 				</form>
 			</div>
 			<div id="Problem7" class="hidden" >
-		        <h3>7、喜欢的故事类型</h3>
+		        <h3 class="question">7、喜欢的故事类型</h3>
 				<form action="" method="get">
 			   <ul>
 		       <li><label><input name="select" type="radio" value="a"/>冒险故事：小红帽</label></li>
@@ -400,7 +414,8 @@
 				</form>
 			</div>
 		    <div id="Result" class="hidden" >
-		       <h3>测试结果：</h3>
+		       <h3 class="question">测试结果：</h3>
+		       <img src="/crazykid/images/xx.png"/>
 			   <p>
 
 			   </p>
