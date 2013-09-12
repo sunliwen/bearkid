@@ -12,6 +12,7 @@
 		h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
 		.but{color:#FF8320; border:1px solid #ccc; background:#fff;cursor:pointer;height:25px; line-height:25px;width:80px;}
 		/*progress*/
+		.progress{background-image: url(../crazy/images/top.png);}
 		.checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; padding:15px; width:600px;}
 		.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:598px;margin:0 auto;padding:10px 0 10px 0;}
 		.evaluation div{float:left;}
@@ -223,9 +224,6 @@
 					return false;
 				}
 			});
-
-
-	//result:
 			oBtn9.click(function(){
 			  data=[];
 			  	oR.animo({animation: 'bounceOutUp'}, function () {
@@ -238,7 +236,6 @@
 						oP5.hide();
 						oP6.hide();
 						oP7.hide();
-
 			  		});
 				oPro.animate({"width":"0%"},400);
 				$("input[type='radio']").attr("checked","");	
@@ -250,7 +247,7 @@
 		});
 	</script>
 </head>
-<body>
+<body  background="/crazykid/images/bg1.jpg">
 	<div class="checkbox">
 		<div class="progress">
 			<p><strong>熊孩子指数大测试</strong></p>
@@ -267,18 +264,18 @@
 			  		<tbody>
 			  			<tr>
 				  			<td>
+				  				<img src="/crazykid/images/boy.png"/>
 								<label><input name="select" type="radio" value="m"/>男  小熊</label>
 				  			</td>
 				  			<td>
+				  				<img src="/crazykid/images/girl.png"/>
 								<label><input name="select" type="radio" value="f"/>女  小兔子</label>
 				  			</td>
-			  			</tr>
-			  			<tr>
-			  				<input type="button"  class="but"  value="下一题" />
 			  			</tr>
 			  		</tbody>
 			      </table>
 				</form>
+				<input type="button"  class="but"  value="下一题" />
 		    </div>
 		    <div id="Problem2" class="hidden" >
 		        <h3>2. 星座</h3>
@@ -333,12 +330,10 @@
 					   	   		<label><input name="select" type="radio" value="c"/>双鱼</label>
 					   	   	</td>
 				   	   </tr>
-				   	   <tr>
-				   	   	<input type="button" class="but"  value="下一题" />
-				   	   </tr>
 			        </tbody>
 		        </table>
 				</form>
+				<input type="button" class="but"  value="下一题" />
 			</div>
 			<div id="Problem3" class="hidden" >
 		        <h3>3. 性格类型</h3>
