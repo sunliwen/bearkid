@@ -225,15 +225,13 @@
 						oR.find["#award"].attr("src", "/crazykid/images/tuz.png");
 					}
 					p.html(result[index]);
-					index＝"";
-					data="";
 				}else{
 					alert("请选择一个答案");
 					return false;
 				}
 			});
 			oBtn9.click(function(){
-			  data=[];
+			  data.length=0;
 			  $('input:checkbox').removeAttr('checked');
 			  oR.animo({animation: 'bounceOutUp'}, function () {
 			  	oR.hide();
