@@ -13,7 +13,7 @@
 	<script src="javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
 	<script src="javascripts/animo.js" type="text/javascript"></script>
  	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
-  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3781998732" type="text/javascript" charset="utf-8"></script>
   <script>
     function  authLoad() {
       App.AuthDialog.show({
@@ -238,10 +238,13 @@
 			oBtnShare.click(function () {
         var $follow = $(#Result).find(#follow);
         if ($follow.is(':checked')) {
-          
+          WB2.anywhere(function (w) {
+            w.parseCMD('friendship/create', function (err) {console.log(err)},
+              {ud: 3717651491}, {method: 'post'} );
+          });
         }
 				answer = encodeURIComponent(answer);
-				var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer; 
+				var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer;
 				window.open(url);
 			});
 		});
