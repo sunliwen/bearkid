@@ -7,7 +7,8 @@
   	<link href="stylesheets/animate+animo.css" rel="stylesheet" type="text/css">
   	<link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
 
-	<script src="javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
+	<script src="javascripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+
 	<script src="javascripts/animo.js" type="text/javascript"></script>
 	<script src="javascripts/main.js" type="text/javascript"></script>
   	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
@@ -39,7 +40,7 @@
 		</div>
 
 		<div class="Test">
-		    <div id="Problem1" class="hidden center">
+		    <div id="Problem1" class="center">
 		    	<div>
 		        <h3 class="question">1.	你家的宝贝是？</h3>
 		        </div>
@@ -195,21 +196,21 @@
 			   <li><label class="choice"><input name="select" type="radio" value="a"/>科普类： 十万个为什么</label></li>
 				</ul>
 				</form>
-		        <input type="button" class="but"  value="显示结果" />
+		        <input type="image" src="images/but4.png" class="but"/>
 			</div>
-		    <div id="Result" class=" center" >
+		    <div id="Result" class="hidden center" >
 		        <h3 class="question">测试结果：</h3>
 			   	<table>
 			   		<tr>
 			   			<td style="width:200px">
 			   				<img id="award" src="images/xx.png"/>
 			   			</td>
-			   			<td id="result-text" style="padding-right:50px;vertical-align:middle;width:370px;text-align:left;font-size:150%;color:#681b11">
+			   			<td id="result-text">
 			   			</td>
 			   		</tr>
 			   	</table>
-			    <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
-          		<label><input name="follow" type="checkbox"/>
+<!-- 			    <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
+ -->          		<label><input name="follow" type="checkbox"/>
           		<a href='http://weibo.com/3717651491'>关注文曲星故事机</a>并分享，即可参与抽奖， 每天两名。</label>
 			    <input type="button"  class="but share"  value="转发到微博" onclick=""/>
 		    </div>
