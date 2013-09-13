@@ -22,9 +22,9 @@
         redirect_uri : 'http://sunliwen.github.io/bearkid/',
               //必选，授权后的回调地址，例如：http://apps.weibo.com/giftabc
         height: 120,    //可选，默认距顶端120px
-        scope: ''friendships_groups_read, friendships_groups_write"//可选，授权页scope参数
+        scope: "friendships_groups_read, friendships_groups_write"//可选，授权页scope参数
       });
-    }
+    };
   </script>
 
 	<script type="text/javascript">
@@ -50,7 +50,6 @@
 			    oP6=$("#Problem6"),
 			    oP7=$("#Problem7"),
 			    oR=$("#Result"),
-			    p=oR.find("#result-text"),
 			    oPro=$(".picbg").find("span"),	
 			    oBtn1=oP1.find(".but"),
 			    oBtn2=oP2.find(".but"),
@@ -61,6 +60,7 @@
 			    oBtn7=oP7.find(".but"),
 			    oBtn9=oR.find("#retake"),
 			    oBtnShare=oR.find(".share"),
+          oBtnFollow = oR.find("#follow"),
 			    index,
 			    answer,
 			    data=[];
@@ -236,6 +236,10 @@
 			});
 
 			oBtnShare.click(function () {
+        var $follow = $(#Result).find(#follow);
+        if ($follow.is(':checked')) {
+          
+        }
 				answer = encodeURIComponent(answer);
 				var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer; 
 				window.open(url);
@@ -421,7 +425,9 @@
 			   		</tr>
 			   	</table>
 			    <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
-          <wb:follow-button uid="3717651491" type="red_1" width="67" height="24"></wb:follow-button>
+          <label><input name="follow" type="checkbox" checked/><a
+              href='http://weibo.com/3717651491'>关注文曲星故事机</a>并分享，
+          既可参与抽奖， 每天两名。</label>
 			    <input type="button"  class="but share"  value="转发到微博" onclick=""/>
 		    </div>
 		</div>
