@@ -11,7 +11,7 @@
     
     // Default configuration
     var defaults = {
-    	duration: 1,
+    	duration: 0.5,
     	animation: null,
     	iterate: 1,
     	timing: "linear",

@@ -57,13 +57,13 @@ h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
 .progress{background-image: url(../images/top.png);}
 .checkbox {background-image: url(../images/bg1.jpg);}
 .Test {background-image: url(../images/bg1.jpg);}
-.checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; width:740px;}
-.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:740px;margin:0 auto;padding:10px 0 10px 0;}
+.checkbox{border:1px solid #FFD7B7; margin:5px auto; width:740px;}
+.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:740px;margin:0;padding:0;}
 .evaluation div{float:left;}
 .progress i{color:#F60;font-weight:700; font-style:normal;}
 .progress p{height:26px;width:100%;}
 .progress .headder{color:#fdea23;margin-top:15px;margin-left: 200px;width:50px;}
-.progress {height: 80px;}
+.progress {height: 100px;}
 .progress .picbg{margin-left: 200px; background:#fff;height:15px;width:500px; border:1px solid red;}
 .progress .picbg span{background:#FF8320;display:block;float:left;height:15px; }
 /*content*/
@@ -71,8 +71,8 @@ h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
 .Test input{text-align: center}
 .Test table {width: 740px;}
 .Test ul{ margin:0; padding:0;margin-left:200px;text-align:left;}
-.Test li{ border:1px solid #FFFBF4;margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
-.Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
+.Test li{ margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px;}
+.Test li.myBox{}
 .hidden{ display:none;}
 .container {float: left;}
 /*.result{padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
