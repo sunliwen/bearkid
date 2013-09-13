@@ -39,7 +39,6 @@ $(function() {
     data = [];
 
   index_page.find('img').click(function() {
-    console.log("clicked");
     index_page.hide();
     questions_page.show();
   });
@@ -268,7 +267,7 @@ $(function() {
     if ($follow.is(':checked')) {
       WB2.anywhere(function(w) {
         w.parseCMD('friendship/create', function(err) {
-          console.log(err);
+          //console.log(err);
         }, {
           ud: 3717651491
         }, {
