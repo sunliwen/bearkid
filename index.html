@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmins:wb="http://open.weibo.com/wb">
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<title>熊孩子指数大测试</title>
@@ -13,6 +13,7 @@
 	<script src="javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
 	<script src="javascripts/animo.js" type="text/javascript"></script>
  	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
   <script>
     function  authLoad() {
       App.AuthDialog.show({
@@ -420,7 +421,8 @@
 			   		</tr>
 			   	</table>
 			    <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
-			    <input type="button"  class="but share"  value="分享到微博" onclick=""/>
+          <wb:follow-button uid="3781998732" type="red_1" width="67" height="24"></wb:follow-button>
+			    <input type="button"  class="but share"  value="转发到微博" onclick=""/>
 		    </div>
 		</div>
 	</div>
