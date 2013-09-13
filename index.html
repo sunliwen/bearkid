@@ -9,253 +9,36 @@
 
 	<script src="javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
 	<script src="javascripts/animo.js" type="text/javascript"></script>
- 	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="text/javascript"></script>
+	<script src="javascripts/main.js" type="text/javascript"></script>
   	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-  	<script>
-    function  authLoad() {
-      App.AuthDialog.show({
-        client_id : '3781998732',    //必选，appkey
-        //XXX Need to change to app.weibo one once they create a link
-        redirect_uri : 'http://apps.weibo.com/wqxstory',
-              //必选，授权后的回调地址，例如：http://apps.weibo.com/giftabc
-        height: 120,    //可选，默认距顶端120px
-        scope: "friendships_groups_read, friendships_groups_write"//可选，授权页scope参数
-      });
-    };
-  	</script>
 
-	<script type="text/javascript">
-	  var result={
-			 "m1":"#熊孩子#我家的小阿哥还算不上小熊孩儿哦~为他描述的一切他都感兴趣极啦,一台内容丰富,可以无限重复的故事机就可以拯救我啦!有了文曲星故事机,故事听再多遍也不怕啦!家有熊孩子?! 来测测! http://apps.weibo.com/wqxstory",
-			 "m2":"#熊孩子#我家的小淘气为萌芽熊孩子，一点战斗力都没有，他对新鲜感的追求是他上进心的反光！ 层出不穷的故事、成语、神话… 文曲星故事机里都有！家有熊孩子？！来测测！http://apps.weibo.com/wqxstory",
-			 "m3":"#熊孩子#我家的大宝贝已经正式进入了熊孩子初级阶段，他的好奇心是将来一切数码产品悲剧的源泉… 文曲星故事机里有无穷无尽的天文地理，每个月都有更新,让他琢磨去吧!http://apps.weibo.com/wqxstory",
-			 "m4":"#熊孩子#我家的小阿哥已经算是进阶熊宝宝了！作为一个小男子汉，从小就要培养深（jie）沉（jian）的气质，要挖掘玩具的内涵才行。文曲星故事机有专家安排的推送功能，常听常新，最适（sheng）合（qian）了！家有熊孩子？！来测测！http://apps.weibo.com/wqxstory",
-		     "m5":"#熊孩子#我家这位小王子已经是名符其实的“熊孩子”啦！和他们没有道理可讲！不管你多疲惫多辛苦他都有不停歇的缠着你！赶紧请文曲星故事机陪他一会儿，吸引他的注意力，让自己能喘口气，现在就解脱吧！ 家有熊孩子？！来测测！ http://apps.weibo.com/wqxstory",
+	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
+	
+	<script> 
 
-		     "f1":"#熊孩子#我家小公主还算不上小熊孩儿哦~她喜欢听爸爸妈妈给她描述这个世界奇妙美好的一切，故事机可以耐心讲上三百零一遍！有了文曲星故事机，故事听再多遍也不怕啦！家有熊孩子？！来测测！ http://apps.weibo.com/wqxstory",
-		     "f2":"#熊孩子#我家的小顽皮为萌芽熊孩子，熊孩儿指数只在萌芽阶段！ 现在就如此追求新鲜感，未来的她一定走在时尚最前线！文曲星故事机，故事总能花样再翻新:)家有熊孩子？！来测测！ http://apps.weibo.com/wqxstory",
-			 "f3":"#熊孩子#我家的小宝贝已经进入了熊孩子初级阶段，她的求知欲已经蔓延到了整个宇宙! 将来不会有男孩子能瞒过她的眼睛! 文曲星故事机里有幼教专家不断更新专业知识，保证修炼火眼金睛!家有熊孩子？！来测测！ http://apps.weibo.com/wqxstory",
-			 "f4":"#熊孩子#我家的小公主已经进入了进阶熊孩子阶段，题主已经看到她将来的男友表情了！不过现在嘛，先给她一个故事机听故事吧，告诉她故事机是会换灵魂的哟！每个月的灵魂讲的故事不一样哟！http://apps.weibo.com/wqxstory",
-			 "f5":"#熊孩子#我家的小公主已经是名符其实的“熊孩子”啦！明明大人辛辛苦苦为她赚钱跑了一天，跑来缠着大人不放！可是这样的熊孩子最可爱啦！不过，不妨请文曲星故事机陪她一会儿，给自己放个假吧！家有熊孩子?!来测测！http://apps.weibo.com/wqxstory"
-			};
-	  $(function(){
-			var oP1=$("#Problem1"),
-			    oP2=$("#Problem2"),
-			    oP3=$("#Problem3"),
-			    oP4=$("#Problem4"),
-			    oP5=$("#Problem5"),
-			    oP6=$("#Problem6"),
-			    oP7=$("#Problem7"),
-			    oR=$("#Result"),
-			    p=$("#result-text"),
-			    oPro=$(".picbg").find("span"),	
-			    oBtn1=oP1.find(".but"),
-			    oBtn2=oP2.find(".but"),
-			    oBtn3=oP3.find(".but"),
-			    oBtn4=oP4.find(".but"),
-			    oBtn5=oP5.find(".but"),
-			    oBtn6=oP6.find(".but"),
-			    oBtn7=oP7.find(".but"),
-			    oBtn9=oR.find("#retake"),
-			    oBtnShare=oR.find(".share"),
-          		oBtnFollow=oR.find("#follow"),
-			    index=0,
-			    answer,
-			    data=[];
-
-			oP1.find("input[type='radio']").change(function(){
-			  var choose1=oP1.find("input[type='radio']:checked").length;
-				if(choose1){
-					oPro.animate({"width":"15%"},400);
-				}
-				data.push($(this).val());
-				return data;
+		function authLoad(){
+			if (document.location.hostname == "localhost") { return false; }
+		 	App.AuthDialog.show({
+			client_id : '3781998732',    //必选，appkey
+			redirect_uri : 'http://apps.weibo.com/wqxstory',     //必选，授权后的回调地址，例如：http://apps.weibo.com/giftabc
+			height: 120,    //可选，默认距顶端120px
+		        scope: "friendships_groups_read, friendships_groups_write"//可选，授权页scope参数
 			});
-			oBtn1.click(function(){
-				var choose1=oP1.find("input[type='radio']:checked").length;
-			  if(choose1){
-			  		oP1.animo({animation: 'flipOutY'}, function () {
-			  			oP1.hide();
-			  			oP2.show();
-			  			oP2.animo({animation: 'flipInY'});
-			  		});
-				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-
-			oP2.find("input[type='radio']").change(function(){
-			  var choose2=oP2.find("input[type='radio']:checked").length;
-				if(choose2){
-					oPro.animate({"width":"30%"},400);
-				}
-				return data;
-			});
-			oBtn2.click(function(){
-				var choose2=oP2.find("input[type='radio']:checked").length;
-			  if(choose2){
-					oP2.animo({animation: 'flipOutY'}, function () {
-			  			oP2.hide();
-			  			oP3.show();
-			  			oP3.animo({animation: 'flipInY'});
-			  		});
-				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-
-			oP3.find("input[type='radio']").change(function(){
-			  var choose3=oP3.find("input[type='radio']:checked").length;
-				if(choose3){
-					oPro.animate({"width":"45%"},400);
-				}
-				return data;
-			});
-			oBtn3.click(function(){
-				var choose3=oP3.find("input[type='radio']:checked").length;
-			  if(choose3){
-					oP3.animo({animation: 'flipOutY'}, function () {
-			  			oP3.hide();
-			  			oP4.show();
-			  			oP4.animo({animation: 'flipInY'});
-			  		});				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-
-			oP4.find("input[type='radio']").change(function(){
-			  var choose4=oP4.find("input[type='radio']:checked").length;
-				if(choose4){
-					oPro.animate({"width":"60%"},400);
-				}
-				data.push($(this).val());
-				return data;
-			});
-			oBtn4.click(function(){
-				var choose4=oP4.find("input[type='radio']:checked").length;
-			  if(choose4){
-					oP4.animo({animation: 'flipOutY'}, function () {
-			  			oP4.hide();
-			  			oP5.show();
-			  			oP5.animo({animation: 'flipInY'});
-			  		});
-				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-			oP5.find("input[type='radio']").change(function(){
-			  var choose5=oP5.find("input[type='radio']:checked").length;
-				if(choose5){
-					oPro.animate({"width":"70%"},400);
-				}
-				return data;
-			});
-			oBtn5.click(function(){
-				var choose5=oP5.find("input[type='radio']:checked").length;
-			  if(choose5){
-					oP5.animo({animation: 'flipOutY'}, function () {
-			  			oP5.hide();
-			  			oP6.show();
-			  			oP6.animo({animation: 'flipInY'});
-			  		});
-				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-			oP6.find("input[type='radio']").change(function(){
-			  var choose6=oP6.find("input[type='radio']:checked").length;
-				if(choose6){
-					oPro.animate({"width":"85%"},400);
-				}
-				return data;
-			});
-			oBtn6.click(function(){
-				var choose6=oP6.find("input[type='radio']:checked").length;
-			  if(choose6){
-					oP6.animo({animation: 'flipOutY'}, function () {
-			  			oP6.hide();
-			  			oP7.show();
-			  			oP7.animo({animation: 'flipInY'});
-			  		});
-				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-			oP7.find("input[type='radio']").change(function(){
-			  var choose7=oP7.find("input[type='radio']:checked").length;
-				if(choose7){
-					oPro.animate({"width":"100%"},400);
-				}				
-				return data;	
-			});
-			oBtn7.click(function(){
-				var choose7=oP7.find("input[type='radio']:checked").length;
-				if(choose7){
-					oP7.animo({animation: 'flipOutY'}, function () {
-			  			oP7.hide();
-			  			oR.show();
-			  			oR.animo({animation: 'flipInY'});
-			  		});
-			  		if (!data[1]) {
-			  			data[1] = 3;
-			  		}
-					index=data[0]+data[1];
-					answer = result[index];
-					if (data[0] === 'f') {
-						$('#Result').find('#award').attr("src", 'images/tuz.png');
-					}
-					p.html(result[index]);
-				}else{
-					alert("请选择一个答案");
-					return false;
-				}
-			});
-			oBtn9.click(function(){
-			  data.length=0;
-			  $('input:radio').removeAttr('checked');
-			  oR.animo({animation: 'flipOutY'}, function () {
-			  	oR.hide();
-				oP1.show();
-	  			oP1.animo({animation: 'flipInY'});
-				oP2.hide();
-				oP3.hide();
-				oP4.hide();
-				oP5.hide();
-				oP6.hide();
-				oP7.hide();
-			  });
-			  oPro.animate({"width":"0%"},400);
-			});
-
-			oBtnShare.click(function () {
-        var $follow = $('#Result').find('#follow');
-        if ($follow.is(':checked')) {
-          WB2.anywhere(function (w) {
-            w.parseCMD('friendship/create', function (err) {console.log(err)},
-              {ud: 3717651491}, {method: 'post'} );
-          });
-        }
-				answer = encodeURIComponent(answer);
-				var url = 'http://v.t.sina.com.cn/share/share.php?appkey=1480881490k&title=' + answer;
-				window.open(url);
-			});
-		});
+		}
 	</script>
+
 </head>
 <body onload="authLoad();">
-	<div class="checkbox">
+	<div id="index" class="center" style="height:600px;">
+		<img src="images/index.jpg" style="cursor:pointer"/>
+	</div>
+	<div id="questions" class="hidden checkbox">
 		<div class="progress">
-			<p class='headder'>测试进度</p><p class="picbg"><span style="width:0%;"></span></p>
+			<p class='header'>测试进度</p><p class="picbg"><span style="width:0%;"></span></p>
 		</div>
 
 		<div class="Test">
-		    <div id="Problem1" class="center">
+		    <div id="Problem1" class="hidden center">
 		    	<div>
 		        <h3 class="question">1.	你家的宝贝是？</h3>
 		        </div>
@@ -283,7 +66,7 @@
 			  		</tbody>
 			      </table>
 				</form>
-				<input type="button"  class="but"  value="下一题" />
+				<input type="image" src="images/but.png" class="but"/>
 		    </div>
 		    <div id="Problem2" class="hidden center" >
 		        <h3 class="question">2. 星座</h3>
@@ -347,7 +130,7 @@
 			        </tbody>
 		        </table>
 				</form>
-				<input type="button" class="but"  value="下一题" />
+				<input type="image" src="images/but.png" class="but"/>
 			</div>
 			<div id="Problem3" class="hidden center" >
 		        <h3 class="question">3. 性格类型</h3>
@@ -359,8 +142,8 @@
 			   <li><label class="choice"><input name="select" type="radio" value="d"/>温和友善维尼熊</label></li>
 			   <li><label class="choice"><input name="select" type="radio" value="e"/>求知欲强小柯南</label></li>	
 				</ul>
-		        <input type="button" class="but"  value="下一题" />
 				</form>
+				<input type="image" src="images/but.png" class="but"/>
 			</div>
 			<div id="Problem4" class="hidden center" >
 		        <h3 class="question">4. 贪玩指数</h3>
@@ -372,8 +155,8 @@
 			   <li><label class="choice"><input name="select" type="radio" value="4"/>见到什么都要追问为什么</label></li>
 		       <li><label class="choice"><input name="select" type="radio" value="5"/>下班疲累依然要陪玩一整晚</label></li>
 				</ul>
-		        <input type="button" class="but"  value="下一题" />
 				</form>
+		        <input type="image" src="images/but.png" class="but"/>
 			</div>
 			<div id="Problem5" class="hidden center" >
 		        <h3 class="question">5. 破坏类型</h3>
@@ -385,8 +168,8 @@
 			   <li><label class="choice"><input name="select" type="radio" value="4"/>天生神力，风卷残云</label></li>
 		       <li><label class="choice"><input name="select" type="radio" value="5"/>叱咤风云，片甲不留</label></li>
 				</ul>
-		        <input type="button" class="but"  value="下一题" />
 				</form>
+		        <input type="image" src="images/but.png" class="but"/>
 			</div>
 			<div id="Problem6" class="hidden center" >
 		        <h3 class="question">6. 喜欢的游戏类型</h3>
@@ -398,8 +181,8 @@
 			   <li><label class="choice"><input name="select" type="radio" value="a"/>和小伙伴玩过家家</label></li>
 		       <li><label class="choice"><input name="select" type="radio" value="b"/>户外游戏</label></li>
 				</ul>
-		        <input type="button" class="but"  value="下一题" />
 				</form>
+		        <input type="image" src="images/but.png" class="but"/>
 			</div>
 			<div id="Problem7" class="hidden center" >
 		        <h3 class="question">7、喜欢的故事类型</h3>
@@ -410,24 +193,23 @@
 			   <li><label class="choice"><input name="select" type="radio" value="c"/>漫画类： 小熊维尼</label></li>
 			   <li><label class="choice"><input name="select" type="radio" value="a"/>科普类： 十万个为什么</label></li>
 				</ul>
-		        <input type="button" class="but"  value="显示结果" />
 				</form>
+		        <input type="button" class="but"  value="显示结果" />
 			</div>
-		    <div id="Result" class="hidden center" >
+		    <div id="Result" class=" center" >
 		        <h3 class="question">测试结果：</h3>
 			   	<table>
 			   		<tr>
-			   			<td style="width:230px">
+			   			<td style="width:200px">
 			   				<img id="award" src="images/xx.png"/>
 			   			</td>
-			   			<td id="result-text" style="vertical-align:middle;width:370px;text-align:left;font-size:150%;color:#681b11">
+			   			<td id="result-text" style="padding-right:50px;vertical-align:middle;width:370px;text-align:left;font-size:150%;color:#681b11">
 			   			</td>
 			   		</tr>
 			   	</table>
 			    <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
-          <label><input name="follow" type="checkbox"/><a
-              href='http://weibo.com/3717651491'>关注文曲星故事机</a>并分享，
-          既可参与抽奖， 每天两名。</label>
+          		<label><input name="follow" type="checkbox"/>
+          		<a href='http://weibo.com/3717651491'>关注文曲星故事机</a>并分享，即可参与抽奖， 每天两名。</label>
 			    <input type="button"  class="but share"  value="转发到微博" onclick=""/>
 		    </div>
 		</div>
