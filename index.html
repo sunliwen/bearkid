@@ -12,9 +12,9 @@
 
 	<script src="javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
 	<script src="javascripts/animo.js" type="text/javascript"></script>
- 	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
-  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-  <script>
+ 	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="text/javascript"></script>
+  	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+  	<script>
     function  authLoad() {
       return;
       App.AuthDialog.show({
@@ -26,7 +26,7 @@
         scope: "friendships_groups_read, friendships_groups_write"//可选，授权页scope参数
       });
     };
-  </script>
+  	</script>
 
 	<script type="text/javascript">
 	  var result={
@@ -78,10 +78,10 @@
 			oBtn1.click(function(){
 				var choose1=oP1.find("input[type='radio']:checked").length;
 			  if(choose1){
-			  		oP1.animo({animation: 'bounceOutUp'}, function () {
+			  		oP1.animo({animation: 'flipOutY'}, function () {
 			  			oP1.hide();
 			  			oP2.show();
-			  			oP2.animo({animation: 'bounchInUp'});
+			  			oP2.animo({animation: 'flipInY'});
 			  		});
 				}else{
 					alert("请选择一个答案");
@@ -99,10 +99,10 @@
 			oBtn2.click(function(){
 				var choose2=oP2.find("input[type='radio']:checked").length;
 			  if(choose2){
-					oP2.animo({animation: 'bounceOutUp'}, function () {
+					oP2.animo({animation: 'flipOutY'}, function () {
 			  			oP2.hide();
 			  			oP3.show();
-			  			oP3.animo({animation: 'bounchInUp'});
+			  			oP3.animo({animation: 'flipInY'});
 			  		});
 				}else{
 					alert("请选择一个答案");
@@ -120,10 +120,10 @@
 			oBtn3.click(function(){
 				var choose3=oP3.find("input[type='radio']:checked").length;
 			  if(choose3){
-					oP3.animo({animation: 'bounceOutUp'}, function () {
+					oP3.animo({animation: 'flipOutY'}, function () {
 			  			oP3.hide();
 			  			oP4.show();
-			  			oP4.animo({animation: 'bounchInUp'});
+			  			oP4.animo({animation: 'flipInY'});
 			  		});				}else{
 					alert("请选择一个答案");
 					return false;
@@ -141,10 +141,10 @@
 			oBtn4.click(function(){
 				var choose4=oP4.find("input[type='radio']:checked").length;
 			  if(choose4){
-					oP4.animo({animation: 'bounceOutUp'}, function () {
+					oP4.animo({animation: 'flipOutY'}, function () {
 			  			oP4.hide();
 			  			oP5.show();
-			  			oP5.animo({animation: 'bounchInUp'});
+			  			oP5.animo({animation: 'flipInY'});
 			  		});
 				}else{
 					alert("请选择一个答案");
@@ -161,10 +161,10 @@
 			oBtn5.click(function(){
 				var choose5=oP5.find("input[type='radio']:checked").length;
 			  if(choose5){
-					oP5.animo({animation: 'bounceOutUp'}, function () {
+					oP5.animo({animation: 'flipOutY'}, function () {
 			  			oP5.hide();
 			  			oP6.show();
-			  			oP6.animo({animation: 'bounchInUp'});
+			  			oP6.animo({animation: 'flipInY'});
 			  		});
 				}else{
 					alert("请选择一个答案");
@@ -181,10 +181,10 @@
 			oBtn6.click(function(){
 				var choose6=oP6.find("input[type='radio']:checked").length;
 			  if(choose6){
-					oP6.animo({animation: 'bounceOutUp'}, function () {
+					oP6.animo({animation: 'flipOutY'}, function () {
 			  			oP6.hide();
 			  			oP7.show();
-			  			oP7.animo({animation: 'bounchInUp'});
+			  			oP7.animo({animation: 'flipInY'});
 			  		});
 				}else{
 					alert("请选择一个答案");
@@ -201,10 +201,10 @@
 			oBtn7.click(function(){
 				var choose7=oP7.find("input[type='radio']:checked").length;
 				if(choose7){
-					oP7.animo({animation: 'bounceOutUp'}, function () {
+					oP7.animo({animation: 'flipOutY'}, function () {
 			  			oP7.hide();
 			  			oR.show();
-			  			oR.animo({animation: 'bounchInUp'});
+			  			oR.animo({animation: 'flipInY'});
 			  		});
 			  		if (!data[1]) {
 			  			data[1] = 3;
@@ -223,10 +223,10 @@
 			oBtn9.click(function(){
 			  data.length=0;
 			  $('input:radio').removeAttr('checked');
-			  oR.animo({animation: 'bounceOutUp'}, function () {
+			  oR.animo({animation: 'flipOutY'}, function () {
 			  	oR.hide();
 				oP1.show();
-	  			oP1.animo({animation: 'bounchInUp'});
+	  			oP1.animo({animation: 'flipInY'});
 				oP2.hide();
 				oP3.hide();
 				oP4.hide();

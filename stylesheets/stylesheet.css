@@ -56,6 +56,7 @@ h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
 /*progress*/
 .progress{background-image: url(../images/top.png);}
 .checkbox {background-image: url(../images/bg1.jpg);}
+.Test {background-image: url(../images/bg1.jpg);}
 .checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; width:740px;}
 .progress,.evaluation{color:#666;height:auto;overflow:hidden;width:740px;margin:0 auto;padding:10px 0 10px 0;}
 .evaluation div{float:left;}
