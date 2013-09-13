@@ -236,7 +236,7 @@
 			});
 
 			oBtnShare.click(function () {
-        var $follow = $(#Result).find(#follow);
+        var $follow = $('#Result').find('#follow');
         if ($follow.is(':checked')) {
           WB2.anywhere(function (w) {
             w.parseCMD('friendship/create', function (err) {console.log(err)},
