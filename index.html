@@ -4,37 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 	<title>熊孩子指数大测试</title>
 	<style type="text/css">
-		body,td,th {font-size: 12px; font-family: "arial, sans-serif";}
-		a {color:#006699; text-decoration:none;}
-		a:hover {color:#f60;text-decoration:underline;}
-		dd,dl,ul,li,p,form{ margin:0; padding:0;list-style-type:none;}
-		h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
-		.but{color:#FF8320; border:1px solid #ccc; background:#fff;cursor:pointer;height:25px; line-height:25px;width:80px;}
-		/*progress*/
-		.progress{background-image: url(../crazykid/images/top.png);background-size: auto;}
-		.checkbox {background-image: url(../crazykid/images/bg1.jpg);}
-		.checkbox{border:1px solid #FFD7B7; margin:5px auto; background:#FFFBF4; padding:15px; width:600px;}
-		.progress,.evaluation{color:#666;height:auto;overflow:hidden;width:598px;margin:0 auto;padding:10px 0 10px 0;}
-		.evaluation div{float:left;}
-		.progress i{color:#F60;font-weight:700; font-style:normal;}
-		.progress p{height:26px;width:100%;}
-		.progress .headder{margin-left: 180px;git}
-		.progress {height: 80px;}
-		.progress .picbg{margin-left: 180px; background:#fff;height:15px;width:350px; border:1px solid red;}
-		.progress .picbg span{background:#FF8320;display:block;float:left;height:15px; }
-		/*content*/
-		.Test .question {margin-left:auto; margin-right:auto; color: 'blue';}
-		.Test ul{ margin:0; padding:0;}
-		.Test li{ border:1px solid #FFFBF4; margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
-		.Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
-		.hidden{ display:none;}
-		.container {float: left;}
-		.result{padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
+
 	</style>
-  <script src="../crazykid/javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
-  <script src="../crazykid/javascripts/animo.js" type="text/javascript"></script>
-  <script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
-  <link href="../crazykid/stylesheets/animate+animo.css" rel="stylesheet" type="text/css">
+
+  	<link href="stylesheets/animate+animo.css" rel="stylesheet" type="text/css">
+  	<link href="stylesheets/stylesheet.css" rel="stylesheet" type="text/css">
+
+	<script src="javascripts/jquery-2.0.3.min.js" type="text/javascript"></script>
+  	<script src="javascripts/animo.js" type="text/javascript"></script>
+  	<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
 
 	<script type="text/javascript">
 	  var result={
@@ -219,7 +197,7 @@
 					index=data[0]+data[1];
 					answer = result[index];
 					if (data[0] === 'f') {
-						$('#Result').find('#award').attr("src", '../crazykid/images/tuz.png');
+						$('#Result').find('#award').attr("src", 'images/tuz.png');
 					}
 					p.html(result[index]);
 				}else{
@@ -229,7 +207,7 @@
 			});
 			oBtn9.click(function(){
 			  data.length=0;
-			  $('input:checkbox').removeAttr('checked');
+			  $('input:radio').removeAttr('checked');
 			  oR.animo({animation: 'bounceOutUp'}, function () {
 			  	oR.hide();
 				oP1.show();
@@ -261,27 +239,27 @@
 		<div class="Test">
 		    <div id="Problem1" >
 		    	<div>
-		        <h3 class="question">1.	性别</h3>
+		        <h3 class="question">1.	你家的宝贝是？</h3>
 		        </div>
 			  <form action="" method="get">
 			  	<table>
 			  		<tbody>
 			  			<tr>
 				  			<td>
-				  				<img src="../crazykid/images/boy.png"/>
+				  				<img src="images/boy.png"/>
 				  			</td>
 				  			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				  			<td>
-				  				<img src="../crazykid/images/girl.png"/>
+				  				<img src="images/girl.png"/>
 				  			</td>
 			  			</tr>
 			  			<tr>
 			  			<td>
-			  				<label><input name="select" type="radio" value="m"/>男  小熊</label>
+			  				<label class="choice"><input name="select" type="radio" value="m"/>男孩</label>
 			  			</td>
 			  			<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 			  			<td>
-			  				<label><input name="select" type="radio" value="f"/>女  小兔子</label>
+			  				<label class="choice"><input name="select" type="radio" value="f"/>女孩</label>
 			  			</td>
 			  			</tr>
 			  		</tbody>
@@ -296,56 +274,56 @@
 				   <tbody>
 				   	   <tr>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="a"/>白羊</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="a"/>白羊</label>
 					   	   	</td>
 					   	   	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="b"/>金牛</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="b"/>金牛</label>
 					   	   	</td>
 				   	   </tr>
 				   	   <tr>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="c"/>双子</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="c"/>双子</label>
 					   	   	</td>
 					   	   	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="a"/>巨蟹</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="a"/>巨蟹</label>
 					   	   	</td>
 				   	   </tr>
 				   	   <tr>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="b"/>狮子</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="b"/>狮子</label>
 					   	   	</td>
 					   	   	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="c"/>处女</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="c"/>处女</label>
 					   	   	</td>
 				   	   </tr>
 				   	   <tr>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="a"/>天平</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="a"/>天平</label>
 					   	   	</td>
 					   	   	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="b"/>天蝎</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="b"/>天蝎</label>
 					   	   	</td>
 				   	   </tr>
 				   	   <tr>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="c"/>射手</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="c"/>射手</label>
 					   	   	</td>
 					   	   	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="a"/>摩羯</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="a"/>摩羯</label>
 					   	   	</td>
 				   	   </tr>
 				   	   <tr>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="b"/>水瓶</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="b"/>水瓶</label>
 					   	   	</td>
 					   	   	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 					   	   	<td>
-					   	   		<label><input name="select" type="radio" value="c"/>双鱼</label>
+					   	   		<label class="choice"><input name="select" type="radio" value="c"/>双鱼</label>
 					   	   	</td>
 				   	   </tr>
 			        </tbody>
@@ -357,11 +335,11 @@
 		        <h3 class="question">3. 性格类型</h3>
 				<form action="" method="get">
 			   <ul>
-			   <li><label><input name="select" type="radio" value="a"/>活泼开朗托马斯</label></li>
-			   <li><label><input name="select" type="radio" value="b"/>自信独立小哪吒</label></li>
-			   <li><label><input name="select" type="radio" value="c"/>含羞内向小kitty</label></li>
-			   <li><label><input name="select" type="radio" value="d"/>温和友善维尼熊</label></li>
-			   <li><label><input name="select" type="radio" value="e"/>求知欲强小柯南</label></li>	
+			   <li><label class="choice"><input name="select" type="radio" value="a"/>活泼开朗托马斯</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="b"/>自信独立小哪吒</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="c"/>含羞内向小kitty</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="d"/>温和友善维尼熊</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="e"/>求知欲强小柯南</label></li>	
 				</ul>
 		        <input type="button" class="but"  value="下一题" />
 				</form>
@@ -370,11 +348,11 @@
 		        <h3 class="question">4. 贪玩指数</h3>
 				<form action="" method="get">
 			   <ul>
-		       <li><label><input name="select" type="radio" value="1"/> 一个故事要听三百遍</label></li>
-		       <li><label><input name="select" type="radio" value="2"/>不玩够三个小时不睡觉</label></li>
-			   <li><label><input name="select" type="radio" value="3"/>三分钟热度玩过一次就烦</label></li>
-			   <li><label><input name="select" type="radio" value="4"/>见到什么都要追问为什么</label></li>
-		       <li><label><input name="select" type="radio" value="5"/>下班疲累依然要陪玩一整晚</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="1"/> 一个故事要听三百遍</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="2"/>不玩够三个小时不睡觉</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="3"/>三分钟热度玩过一次就烦</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="4"/>见到什么都要追问为什么</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="5"/>下班疲累依然要陪玩一整晚</label></li>
 				</ul>
 		        <input type="button" class="but"  value="下一题" />
 				</form>
@@ -383,11 +361,11 @@
 		        <h3 class="question">5. 破坏类型</h3>
 				<form action="" method="get">
 			   <ul>
-		       <li><label><input name="select" type="radio" value="1"/>和风细雨，人畜无害</label></li>
-		       <li><label><input name="select" type="radio" value="2"/>风雨交加，满地凋零</label></li>
-			   <li><label><input name="select" type="radio"value="3"/>一夫当关，万夫莫开</label></li>
-			   <li><label><input name="select" type="radio" value="4"/>天生神力，风卷残云</label></li>
-		       <li><label><input name="select" type="radio" value="5"/>叱咤风云，片甲不留</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="1"/>和风细雨，人畜无害</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="2"/>风雨交加，满地凋零</label></li>
+			   <li><label class="choice"><input name="select" type="radio"value="3"/>一夫当关，万夫莫开</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="4"/>天生神力，风卷残云</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="5"/>叱咤风云，片甲不留</label></li>
 				</ul>
 		        <input type="button" class="but"  value="下一题" />
 				</form>
@@ -396,11 +374,11 @@
 		        <h3 class="question">6. 喜欢的游戏类型</h3>
 				<form action="" method="get">
 			   <ul>
-		       <li><label><input name="select" type="radio" value="a"/>听故事</label></li>
-		       <li><label><input name="select" type="radio" value="b"/>自己画画</label></li>
-			   <li><label><input name="select" type="radio" value="c"/>玩电子游戏</label></li>
-			   <li><label><input name="select" type="radio" value="a"/>和小伙伴玩过家家</label></li>
-		       <li><label><input name="select" type="radio" value="b"/>户外游戏</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="a"/>听故事</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="b"/>自己画画</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="c"/>玩电子游戏</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="a"/>和小伙伴玩过家家</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="b"/>户外游戏</label></li>
 				</ul>
 		        <input type="button" class="but"  value="下一题" />
 				</form>
@@ -409,10 +387,10 @@
 		        <h3 class="question">7、喜欢的故事类型</h3>
 				<form action="" method="get">
 			   <ul>
-		       <li><label><input name="select" type="radio" value="a"/>冒险故事：小红帽</label></li>
-		       <li><label><input name="select" type="radio" value="b"/>古典故事：田螺姑娘</label></li>
-			   <li><label><input name="select" type="radio" value="c"/>漫画类： 小熊维尼</label></li>
-			   <li><label><input name="select" type="radio" value="a"/>科普类： 十万个为什么</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="a"/>冒险故事：小红帽</label></li>
+		       <li><label class="choice"><input name="select" type="radio" value="b"/>古典故事：田螺姑娘</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="c"/>漫画类： 小熊维尼</label></li>
+			   <li><label class="choice"><input name="select" type="radio" value="a"/>科普类： 十万个为什么</label></li>
 				</ul>
 		        <input type="button" class="but"  value="显示结果" />
 				</form>
@@ -420,10 +398,10 @@
 		    <div id="Result" class="hidden" >
 		       <h3 class="question">测试结果：</h3>
 			   <div class="container">
-				<img id="award" src="../crazykid/images/xx.png"/>
+				<img id="award" src="images/xx.png"/>
 				<div class="result"></div>
 			   </div>
-			   <input type="button"  id="retake"class="but"  value="从新开始" onclick=""/>
+			   <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
 			   <input type="button"  class="but share"  value="分享到微博" onclick=""/>
 		    </div>
 		</div>
