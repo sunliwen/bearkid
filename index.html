@@ -37,7 +37,7 @@
 			    oP6=$("#Problem6"),
 			    oP7=$("#Problem7"),
 			    oR=$("#Result"),
-			    p=oR.find(".result"),
+			    p=oR.find("#result-text"),
 			    oPro=$(".picbg").find("span"),	
 			    oBtn1=oP1.find(".but"),
 			    oBtn2=oP2.find(".but"),
@@ -237,7 +237,7 @@
 		</div>
 
 		<div class="Test">
-		    <div id="Problem1" >
+		    <div id="Problem1" class="hidden center">
 		    	<div>
 		        <h3 class="question">1.	你家的宝贝是？</h3>
 		        </div>
@@ -267,7 +267,7 @@
 				</form>
 				<input type="button"  class="but"  value="下一题" />
 		    </div>
-		    <div id="Problem2" class="hidden" >
+		    <div id="Problem2" class="hidden center" >
 		        <h3 class="question">2. 星座</h3>
 				<form action="" method="get">
 			   <table>
@@ -331,7 +331,7 @@
 				</form>
 				<input type="button" class="but"  value="下一题" />
 			</div>
-			<div id="Problem3" class="hidden" >
+			<div id="Problem3" class="hidden center" >
 		        <h3 class="question">3. 性格类型</h3>
 				<form action="" method="get">
 			   <ul>
@@ -344,7 +344,7 @@
 		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
-			<div id="Problem4" class="hidden" >
+			<div id="Problem4" class="hidden center" >
 		        <h3 class="question">4. 贪玩指数</h3>
 				<form action="" method="get">
 			   <ul>
@@ -357,7 +357,7 @@
 		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
-			<div id="Problem5" class="hidden" >
+			<div id="Problem5" class="hidden center" >
 		        <h3 class="question">5. 破坏类型</h3>
 				<form action="" method="get">
 			   <ul>
@@ -370,7 +370,7 @@
 		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
-			<div id="Problem6" class="hidden" >
+			<div id="Problem6" class="hidden center" >
 		        <h3 class="question">6. 喜欢的游戏类型</h3>
 				<form action="" method="get">
 			   <ul>
@@ -383,7 +383,7 @@
 		        <input type="button" class="but"  value="下一题" />
 				</form>
 			</div>
-			<div id="Problem7" class="hidden" >
+			<div id="Problem7" class="hidden center" >
 		        <h3 class="question">7、喜欢的故事类型</h3>
 				<form action="" method="get">
 			   <ul>
@@ -395,14 +395,20 @@
 		        <input type="button" class="but"  value="显示结果" />
 				</form>
 			</div>
-		    <div id="Result" class="hidden" >
-		       <h3 class="question">测试结果：</h3>
-			   <div class="container">
-				<img id="award" src="images/xx.png"/>
-				<div class="result"></div>
-			   </div>
-			   <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
-			   <input type="button"  class="but share"  value="分享到微博" onclick=""/>
+		    <div id="Result" class="center" >
+		        <h3 class="question">测试结果：</h3>
+			   	<table>
+			   		<tr>
+			   			<td style="width:230px">
+			   				<img id="award" src="images/xx.png"/>
+			   			</td>
+			   			<td id="result-text" style="vertical-align:middle;width:370px;text-align:left;font-size:150%">
+			   				#熊孩子#我家的小公主已经是名符其实的“熊孩子”啦！明明大人辛辛苦苦为她赚钱跑了一天，跑来缠着大人不放！可是这样的熊孩子最可爱啦！不过，不妨请文曲星故事机陪她一会儿，给自己放个假吧！家有熊孩子？！来测测！（活动链接）
+			   			</td>
+			   		</tr>
+			   	</table>
+			    <input type="button"  id="retake" class="but"  value="从新开始" onclick=""/>
+			    <input type="button"  class="but share"  value="分享到微博" onclick=""/>
 		    </div>
 		</div>
 	</div>

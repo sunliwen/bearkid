@@ -69,12 +69,15 @@ h1,h2,h3,h4,h5{font-size:14px;margin:0; padding:0; line-height:28px;}
 .Test .question {margin: 15px; font-size: 200%;text-align:center; color:#1086ff;}
 .Test input{text-align: center}
 .Test table {width: 600px;}
-.Test ul{ margin:0; padding:0;margin-left:200px;}
+.Test ul{ margin:0; padding:0;margin-left:200px;text-align:left;}
 .Test li{ border:1px solid #FFFBF4;margin-bottom:4px; cursor:pointer; width:100%; height:30px; line-height:30px; padding-left:5px; background:#FFFBF4}
 .Test li.myBox{ border:1px solid #e7e7e7; background:#f7f7f7;}
 .hidden{ display:none;}
 .container {float: left;}
-.result{padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
+/*.result{padding:8px; line-height:25px;background:#FFF; border:1px dotted #FF8E20;}
+*/
 .choice{color:#8d4634;font-size:150%;}
-td,
 td.center{text-align: center}
+
+.center {text-align: center;}
+.but {margin: 50px;}
